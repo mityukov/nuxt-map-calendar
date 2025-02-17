@@ -1,10 +1,9 @@
-<template>
-  <h1 class="text-3xl font-bold underline p-4 bg-amber-100 rounded-b-xl">
-    Hello world!
-  </h1>
+<script setup>
+</script>
 
-  <div>
+<template>
+  <div class="bg-white text-dark font-newsans antialiased accent-osnova1">
     <NuxtRouteAnnouncer />
-    <NuxtWelcome />
+    <NuxtPage />
   </div>
 </template>
