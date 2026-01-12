@@ -13,10 +13,10 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
-  modules: ['nuxt-auth-sanctum'],
+  modules: ['nuxt-auth-sanctum', '@nuxt/icon'],
   sanctum: {
     baseUrl: 'https://mappanel.test', // backend
-    logLevel: 5,
+    // logLevel: 5,
     origin: 'https://mappanel.test:3000',
     redirect: {
       keepRequestedRoute: true,

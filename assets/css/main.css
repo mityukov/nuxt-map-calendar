@@ -1,1 +1,107 @@
 @import "tailwindcss";
+@import "../../public/fonts/stylesheet.css";
+
+@theme {
+    --font-newsans: "SF Pro Display", Helvetica, Arial, sans-serif;
+    --font-gilroy: Gilroy, sans-serif;
+
+    --color-current: currentColor;
+
+    --color-gray-body: #f5f6f8;
+    --color-borders: #C2CFE0;
+    --color-line: #EBEFF2;
+    --color-icons: #9CA4C1;
+    --color-osnova2: #005A79;
+    --color-osnova1: #019DA4;
+    --color-osnova1-50: #019DA488;
+    --color-gray-33: #333333;
+    --color-cal-green: #09B959;
+    --color-dark2: #5E6473;
+    --color-text-light: #8890A6;
+    --color-text-dark: #192A3E;
+    --color-text-us: #334D6E;
+    --color-state-focused: #86B1EB;
+    --color-state-success: #71BD8E;
+    --color-state-error: #E08687;
+    --color-state-disable: #DFE4EB;
+
+    /* fontSizes: */
+    --text-input-md: 14px;
+    --text-input-md--line-height: 32px;
+    --text-login-title: 40px;
+    --text-login-title--line-height: 48px;
+    --text-h2: 26px;
+    --text-h2-mobile: 32px;
+
+    --spacing-screen\/2: 50vh;
+    --spacing-screen\/3: 33vh;
+    --spacing-login-right-col: 580px;
+    --spacing-login-form: 377px;
+    --spacing-auth-input-height: 50px;
+    --spacing-auth-input-height-mobile: 52px;
+
+    --shadow-main-menu: 0 -4px 18px rgba(0, 0, 0, .08);
+}
+
+@layer base {
+    dialog {
+        @apply bg-white rounded-sm w-full px-4 -top-screen/3;
+    }
+}
+
+@layer components {
+    .form-control {
+        @apply w-full px-3 py-2 bg-white rounded-lg border focus:border-transparent outline-hidden lg:placeholder-transparent focus:ring-3 transition-shadow duration-150 ease-in-out border-borders lg:border-line focus:ring-osnova1-50;
+    }
+
+    .form-control--auth {
+        @apply w-full h-auth-input-height-mobile lg:h-auth-input-height;
+    }
+
+    .amo-form-control {
+        @apply w-full px-3 py-3 rounded-xs bg-white border border-borders focus:border-state-focused outline-hidden focus:outline-hidden transition-colors duration-150 ease-in-out;
+    }
+    select.amo-form-control:not([multiple]) {
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.6563 5.64314L7.99958 11.2998L2.34292 5.64314L3.28558 4.6998L7.99958 9.41447L12.7136 4.69981L13.6563 5.64314Z' fill='%238890A6'/%3E%3C/svg%3E%0A");
+        background-position: right 12px center;
+        background-repeat: no-repeat;
+    }
+
+    .worker-section-title {
+        @apply text-text-light text-[10px] uppercase font-bold pt-3.5 pb-2;
+    }
+}
+
+@utility flex-center {
+    @apply flex items-center justify-center;
+}
+@utility bg-is-past {
+    background: #E1E5E5;
+}
+@utility bg-reservation {
+    background-color: #E1E5EB;
+    /*background-color: white;*/
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='42' viewBox='0 0 24 42' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='24' height='42' fill='%23EBEFF5'/%3E%3Cpath d='M24 39.3622V31.5058L17.9411 42H22.477L24 39.3622Z' fill='%23E1E5EB'/%3E%3Cpath d='M24 17.6493V25.5058L14.477 42H9.94114L24 17.6493Z' fill='%23E1E5EB'/%3E%3Cpath d='M24 11.6493V3.79294L1.94114 42H6.47704L24 11.6493Z' fill='%23E1E5EB'/%3E%3Cpath d='M18.1899 0H22.7258L0 39.3622V31.5058L18.1899 0Z' fill='%23E1E5EB'/%3E%3Cpath d='M14.7258 0H10.1899L0 17.6493V25.5058L14.7258 0Z' fill='%23E1E5EB'/%3E%3Cpath d='M2.18986 0H6.72576L0 11.6493V3.79294L2.18986 0Z' fill='%23E1E5EB'/%3E%3C/svg%3E%0A");
+}
+@utility bg-type1 {
+    background: #C6DDF7;
+}
+@utility bg-type2 {
+    background: #C6F7C8;
+}
+@utility bg-type3 {
+    background: #F0C6F7;
+}
+
+@utility scrollbar-none {
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.left-col-gradient {
+    background: linear-gradient(180deg, #019DA4 0%, #02798A 52.08%, #C79D09 100%);
+}
